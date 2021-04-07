@@ -74,9 +74,9 @@ function cambio()
 		
  		
 	  }
-	  if(message.payloadString==='Encendido'){
+	  if(message.payloadString==='ENCENDER'){
 	  	document.getElementById("btn").innerHTML="Apagar";
-	  } else if(message.payloadString==='Apagado'){
+	  } else if(message.payloadString==='APAGAR'){
 		document.getElementById("btn").innerHTML="Encender";
 	  }
 	  
