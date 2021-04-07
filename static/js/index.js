@@ -66,9 +66,11 @@ function cambio()
     console.log("onMessageArrived:"+message.payloadString);
 	  //comando para poner el sensor desde esp32
 	  document.getElementById("sensor").innerHTML=message.payloadString;
-	  if(message.payloadString==='Encendido'){
-		
-	  } else if(message.payloadString==='Apagado'){
+	  if(message.payloadString==='ENCENDER'){
+		 document.getElementById("imagen").src=https://www.tuslamparasonline.com/26321-thickbox_default/comprar-downlights-led-on-line.jpg;
+	  } else if(message.payloadString==='APAGAR'){
+		  document.getElementById('imagen').src=http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png;
+		  
 		
  		
 	  }
