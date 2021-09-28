@@ -19,7 +19,7 @@ function cambio()
 }
 
 var btn=document.getElementById('boton'), contador=0;
-function cambio()
+function cambio 1()
 { if (contador==0)
 	{
 	message = new Paho.MQTT.Message("ENCENDER");
