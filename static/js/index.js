@@ -23,14 +23,14 @@ function cambio()
 { if (contador==0)
 	{
 	message = new Paho.MQTT.Message("ENCENDER");
-	message.destinationName = "israelnoriega1998@hotmail.com/test1";
+	message.destinationName = "israelnoriega1998@hotmail.com/test2;
 	client.send(message);
 	contador=1;
 	}
  else
 	{
 	message = new Paho.MQTT.Message("APAGAR");
-	message.destinationName = "israelnoriega1998@hotmail.com/test1";
+	message.destinationName = "israelnoriega1998@hotmail.com/test2;
 	client.send(message);
 	contador=0;
 	}
@@ -88,9 +88,28 @@ function cambio()
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
 	  } else if(message.payloadString==='APAGAR'){
 		  document.getElementById('imagen').src= "https://www.tuslamparasonline.com/26321-thickbox_default/comprar-downlights-led-on-line.jpg";
-		
 		  
-		
+	  }
+	  if(message.payloadString==='ENCENDER'){
+	  	document.getElementById("btn").innerHTML="Apagar";
+	  } else if(message.payloadString==='APAGAR'){
+		document.getElementById("btn").innerHTML="Encender";
+	  }
+	  
+  }
+
+
+ // called when a message arrives
+   function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+	  //comando para poner el sensor desde esp32
+	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  if(message.payloadString==='ENCENDER'){
+		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
+	  } else if(message.payloadString==='APAGAR'){
+		  document.getElementById('imagen').src= "https://www.tuslamparasonline.com/26321-thickbox_default/comprar-downlights-led-on-line.jpg";
+		  
+		  	
  		
 	  }
 	  if(message.payloadString==='ENCENDER'){
