@@ -18,7 +18,7 @@ function cambio()
 	}
 }
 
-var btn=document.getElementById('btn'), contador=0;
+var btn=document.getElementById('boton'), contador=0;
 function cambio()
 { if (contador==0)
 	{
@@ -83,7 +83,7 @@ function cambio()
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  //comando para poner el sensor desde esp32
-	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  document.getElementById("sensor 1:").innerHTML=message.payloadString;
 	  if(message.payloadString==='ENCENDER'){
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
 	  } else if(message.payloadString==='APAGAR'){
@@ -103,7 +103,7 @@ function cambio()
    function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  //comando para poner el sensor desde esp32
-	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  document.getElementById("sensor 2:").innerHTML=message.payloadString;
 	  if(message.payloadString==='ENCENDER'){
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
 	  } else if(message.payloadString==='APAGAR'){
@@ -113,9 +113,9 @@ function cambio()
  		
 	  }
 	  if(message.payloadString==='ENCENDER'){
-	  	document.getElementById("btn").innerHTML="Apagar";
+	  	document.getElementById("boton").innerHTML="Apagar";
 	  } else if(message.payloadString==='APAGAR'){
-		document.getElementById("btn").innerHTML="Encender";
+		document.getElementById("boton").innerHTML="Encender";
 	  }
 	  
   }
